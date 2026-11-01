@@ -1,0 +1,7 @@
+# Local agent configuration and credentials
+.agents/
+.aws/
+.codex/
+.agentkit/
+.env
+.env.*
