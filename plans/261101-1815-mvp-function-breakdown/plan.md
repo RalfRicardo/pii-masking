@@ -17,7 +17,7 @@ Backlog 75 function codes cho MVP tiếng Anh, PDF native/scan/mixed; chữ vi�
 - [Danh mục chức năng và acceptance](./function-breakdown.md)
 - [CSV phân công và tracking](./function-backlog.csv)
 
-Function codes là work packages; không phải tên hàm code. Owner ML1, CS1/CS2 và SE1–SE4 chưa được gán tên thật; fine-tune ML-05 thuộc ML1. Các phase là roadmap tích hợp, không cản phát triển song song theo contract.
+Function codes là work packages; không phải tên hàm code. Đã hoàn tất gán tên thật cho cả 7 vai trò (ML1: Nguyễn Đăng Đạt, SE2: Nguyễn Đinh Phú Vinh, SE3: Nguyễn Tuấn Vinh, SE4: Đỗ Minh Tấn, SE1: Dương Minh Đức, CS1: Nguyễn Quang Anh, CS2: Hoàng Thị Kiều Ly). Fine-tune ML-05 do ML1 (Đăng Đạt) trực tiếp chạy Colab Pro với sự hỗ trợ thiết kế kiến trúc từ SE2 (Phú Vinh). Các phase là roadmap tích hợp, không cản phát triển song song theo contract.
 
 ## Goals
 
@@ -51,6 +51,6 @@ Journal skipped by preference (`journal.auto=false`).
 
 75 function codes, CSV và phase checkboxes đã đối chiếu. Sau review, đồng bộ dependencies, owner và mốc ở toàn bộ artifact; không dùng cảnh báo của reviewer để kết luận runtime bug khi chưa có code. Scope/quality/server decisions còn mở có owner trong backlog. File links và DAG được kiểm tra lại sau chỉnh sửa.
 
-### Cập nhật cơ cấu chuyên môn
+### Cập nhật cơ cấu chuyên môn và gán nhân sự
 
-Theo yêu cầu, phân lại 75 function cho 1 ML, 2 Cyber Security và 4 SE; mã, phạm vi, dependencies, milestones và trạng thái được giữ nguyên. CSV bổ sung contributors. Fine-tune thuộc ML1; SE hỗ trợ data/regex/serving, CS2 verification độc lập với RED. Đồng bộ inventory, CSV và cả 4 phase; assignee tên thật và năng lực thực tế chưa được xác định.
+Phân bổ 75 function cho 1 ML, 2 Cyber Security và 4 SE và đã chốt tên thật 7 thành viên vào CSV tracking. Fine-tune ML-05 do ML1 (Nguyễn Đăng Đạt) trực tiếp chạy Colab Pro; SE2 (Nguyễn Đinh Phú Vinh) gánh Backend & System Lead và đồng thiết kế model. SE hỗ trợ data/regex/serving, CS2 verification độc lập với RED. Đồng bộ toàn bộ inventory, CSV và các phase.

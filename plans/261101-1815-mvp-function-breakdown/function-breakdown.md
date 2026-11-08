@@ -8,7 +8,7 @@ Trạng thái: bản phân rã để giao việc, chưa phải đặc tả code 
 - PDF tiếng Anh native, scan và mixed; tự động phát hiện chữ in; chữ viết tay/chữ ký được khoanh vùng thủ công.
 - Sáu nhóm PII đề xuất: tên người, email, điện thoại, địa chỉ, ngày sinh và mã định danh cá nhân. Chính sách nhãn và hệ mã ID còn chờ CORE-01; chưa mặc định hỗ trợ toàn cầu.
 - Function code là mã chức năng/work package để giao việc, không bắt buộc tương ứng một hàm lập trình, endpoint hay pull request. Mã giữ ổn định khi đổi owner hoặc thứ tự ưu tiên; không đưa mã vào production comments hay tên migration.
-- Mỗi function có một owner chịu trách nhiệm cuối. Cơ cấu chuyên môn đã chốt: ML1 (1 ML), CS1/CS2 (2 Cyber Security), SE1–SE4 (4 Software Engineer). Việc gán từng function cho vai trò là đề xuất triển khai theo cơ cấu này. Cột assignee trong CSV để trống để điền tên thật.
+- Mỗi function có một owner chịu trách nhiệm cuối. Cơ cấu chuyên môn đã chốt: ML1 (1 ML), CS1/CS2 (2 Cyber Security), SE1–SE4 (4 Software Engineer). Đã hoàn tất gán 7 thành viên chính thức vào cột Assignee trong CSV và backlog.
 - Phụ thuộc là điều kiện tích hợp/nghiệm thu. Các nhóm có thể lập trình đồng thời theo contract đã chốt; không dùng mock để tuyên bố hoàn thành.
 - Mỗi việc phải có bằng chứng kiểm tra phù hợp; các ca liên quan dữ liệu/quyền/redaction cần kiểm thử lỗi và reviewer khác owner. Một task lớn có thể chia subtasks nhưng giữ nguyên mã cha.
 - Size S/M/L là độ lớn tương đối, không phải ngày công. P0 là gate an toàn/hợp đồng; P1 vẫn là phần bắt buộc của MVP, không phải tính năng tùy chọn.
@@ -19,23 +19,23 @@ Trạng thái: bản phân rã để giao việc, chưa phải đặc tả code 
 
 Mã vai trò không phải tên thật: ML1, CS1, CS2, SE1, SE2, SE3, SE4. Prefix function mô tả miền chức năng, không bắt buộc trùng chuyên môn người thực hiện; ví dụ ML-04 (regex) giao SE4, ML-03 (serving) giao SE2.
 
-| Vai trò | Trách nhiệm chính | Function owner | Số mã |
-|---|---|---|---|
-| ML1 — Machine Learning | Baseline mô hình, preprocessing cho training, fine-tune/checkpoint và đánh giá ML | ML-01, ML-02, ML-05, ML-07 | 4 |
-| CS1 — Security Engineering | Chính sách PII, phân quyền/audit, kiểm tra vùng và dữ liệu ẩn, resource isolation, ma trận an toàn và race tests | CORE-01; BE-03/12; RED-01/02/05; QA-01/05; OPS-03 | 9 |
-| CS2 — Security Verification | Verification độc lập, fixture đối kháng, kiểm thử redaction/quyền truy cập và nghiệm thu | DATA-05; VER-01–06; QA-03/04/07 | 10 |
-| SE1 — Frontend | Giao diện, viewer, duyệt vùng và E2E sản phẩm | FE-01–12; QA-02 | 13 |
-| SE2 — Backend và vận hành | API/jobs/storage/revision, tích hợp model serving và triển khai | CORE-03; BE-01/02/04–11; ML-03; OPS-01/02/04/05 | 16 |
-| SE3 — Document/OCR | Extraction, OCR, geometry và mapping entity thành vùng | CORE-02; OCR-01–09; ML-08 | 11 |
-| SE4 — Data và PDF engine | Dữ liệu, regex/hybrid, redaction text/ảnh, xuất PDF và benchmark sản phẩm | DATA-01–04/06; ML-04/06; RED-03/04/06/07; QA-06 | 12 |
+| Vai trò | Assignee (Tên thật) | Trách nhiệm chính | Function owner | Số mã |
+|---|---|---|---|---|
+| ML1 — Machine Learning | Nguyễn Đăng Đạt (ICT) | Baseline mô hình, preprocessing, fine-tune/checkpoint trên Colab Pro và đánh giá ML | ML-01, ML-02, ML-05, ML-07 | 4 |
+| CS1 — Security Engineering | Nguyễn Quang Anh (CS) | Chính sách PII, phân quyền/audit, kiểm tra vùng và dữ liệu ẩn, resource isolation, ma trận an toàn và race tests | CORE-01; BE-03/12; RED-01/02/05; QA-01/05; OPS-03 | 9 |
+| CS2 — Security Verification | Hoàng Thị Kiều Ly (CS) | Verification độc lập, fixture đối kháng, kiểm thử redaction/quyền truy cập và nghiệm thu | DATA-05; VER-01–06; QA-03/04/07 | 10 |
+| SE1 — Frontend | Dương Minh Đức (ICT) | Giao diện, viewer, duyệt vùng và E2E sản phẩm | FE-01–12; QA-02 | 13 |
+| SE2 — Backend và vận hành | Nguyễn Đinh Phú Vinh (ICT) | Kiến trúc hệ thống, API/jobs/storage/revision, tích hợp model serving, server demo và đồng thiết kế model | CORE-03; BE-01/02/04–11; ML-03; OPS-01/02/04/05 | 16 |
+| SE3 — Document/OCR | Nguyễn Tuấn Vinh (ICT) | Extraction, OCR, geometry và mapping entity thành vùng | CORE-02; OCR-01–09; ML-08 | 11 |
+| SE4 — Data và PDF engine | Đỗ Minh Tấn (ICT) | Dữ liệu, regex/hybrid, redaction text/ảnh, xuất PDF và benchmark sản phẩm | DATA-01–04/06; ML-04/06; RED-03/04/06/07; QA-06 | 12 |
 
 ### Ranh giới trách nhiệm ML và SE
 
-- ML1 chịu trách nhiệm thực hiện fine-tune ML-05, thiết kế thí nghiệm, hyperparameters, lựa chọn checkpoint/model và quyết định threshold theo validation. Không giao bước huấn luyện này sang SE.
-- SE4 chuẩn bị nguồn, annotation, dedup/split, regex và code kết hợp kết quả. ML1 duyệt DATA-02/03/06 và ML-04/06; SE không tự thay taxonomy hoặc tune threshold trên test.
-- SE2 đóng gói, load và tích hợp model do ML1 bàn giao; không tự train lại hoặc đổi checkpoint mặc định. SE3 ánh xạ spans sang vùng PDF.
-- Reviewer SE4 của ML-01/02/05/07 kiểm tra dữ liệu, cấu hình, metrics, artifact và khả năng tái lập; việc này không thay thế đánh giá chuyên môn từ một ML thứ hai. Quyết định huấn luyện vẫn thuộc ML1.
-- SE2/SE4 hỗ trợ môi trường và dữ liệu cho ML-05; contributor không đồng nghĩa được giao thực hiện fine-tune.
+- ML1 (Nguyễn Đăng Đạt) chịu trách nhiệm chính về ML-01, ML-02, ML-05 (trực tiếp chạy Colab Pro fine-tune checkpoint) và ML-07. SE2 (Nguyễn Đinh Phú Vinh) phối hợp đồng thiết kế kiến trúc mô hình, schema nhãn và chuyển giao cho Đạt chạy Colab Pro.
+- SE4 (Đỗ Minh Tấn) chuẩn bị nguồn, annotation, dedup/split, regex và code kết hợp kết quả. ML1 duyệt DATA-02/03/06 và ML-04/06; SE không tự thay taxonomy hoặc tune threshold trên test.
+- SE2 (Nguyễn Đinh Phú Vinh) đóng gói, load và tích hợp model do ML1 bàn giao; SE3 (Nguyễn Tuấn Vinh) ánh xạ spans sang vùng PDF.
+- Reviewer SE4 của ML-01/02/05/07 kiểm tra dữ liệu, cấu hình, metrics, artifact và khả năng tái lập. Quyết định chạy và huấn luyện trên Colab Pro thuộc ML1.
+- SE2/SE4 hỗ trợ môi trường, dữ liệu và pipeline tích hợp cho ML-05.
 
 ### Ranh giới Security và SE
 
